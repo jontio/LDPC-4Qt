@@ -294,6 +294,8 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->setupUi(this);
     thisinit=this;
     qInstallMessageHandler(myMessageOutput);
+
+   // setRandFileName(((QString)(QApplication::applicationDirPath()+"/randfile")).toLocal8Bit().data());
 }
 
 MainWindow::~MainWindow()

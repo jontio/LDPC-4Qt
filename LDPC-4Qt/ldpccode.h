@@ -4,10 +4,7 @@
 #include "ldpcmakeldpc.h"
 #include "ldpcmakegen.h"
 #include "ldpcqconversions.h"
-//#include "ldpcencode.h"
-//#include "ldpctransmitsimulation.h"
-//#include "ldpcdecode.h"
-//#include "ldpcverify.h"
+#include <QApplication>
 
 #include <qDebug>
 
@@ -25,6 +22,8 @@ public:
 
     QVector<int> ParityCheckMatrix;
     QVector<int> GeneratorMatrix;
+
+    bool setRandFileName(QString filename);
 
     bool isEmpty()
     {

@@ -74,46 +74,60 @@ static rand_state state0;		/* Default state structure */
 
 static rand_state *state;		/* Pointer to current state */
 
+//jonti. replacement for RAND_FILE
+char rand_file[FILENAME_MAX]="\"randfile\"";
+int setRandFileName(char *filename)
+{
+    if(strlen(filename)>=FILENAME_MAX)
+    {
+        fprintf(stderr,"setRandFileName fail: filename to big.");
+        return 0;
+    }
+    strcpy(rand_file,filename);
+    return 1;
+}
 
 /* INITIALIZE MODULE.  Sets things up using the default state structure,
    set as if rand_seed had been called with a seed of one. */
 
 static void initialize (void)
 {
-  int i, j, k, w;
-  char b;
-  FILE *f;
+    int i, j, k, w;
+    char b;
+    FILE *f;
 
-  if (!initialized)
-  {
-    f = fopen(RAND_FILE,"rb");
-    
-    if (f==NULL)
-    { fprintf(stderr,"Can't open file of random numbers (%s)\n",RAND_FILE);
-      exit(1);
-    }
+    if (!initialized)
+    {
 
-    for (i = 0; i<N_tables; i++)
-    { for (j = 0; j<Table_size; j++)
-      { w = 0;
-        for (k = 0; k<4; k++)
-        { if (fread(&b,1,1,f)!=1)
-          { fprintf(stderr,"Error reading file of random numbers (%s)\n",
-                            RAND_FILE);
+
+        f = fopen(rand_file,"rb");
+
+        if (f==NULL)
+        { fprintf(stderr,"Can't open file of random numbers (%s)\n",rand_file);
             exit(1);
-          }
-          w = (w<<8) | (b&0xff);
         }
-        rn[i][j] = w;
-      }
+
+        for (i = 0; i<N_tables; i++)
+        { for (j = 0; j<Table_size; j++)
+            { w = 0;
+                for (k = 0; k<4; k++)
+                { if (fread(&b,1,1,f)!=1)
+                    { fprintf(stderr,"Error reading file of random numbers (%s)\n",
+                              rand_file);
+                        exit(1);
+                    }
+                    w = (w<<8) | (b&0xff);
+                }
+                rn[i][j] = w;
+            }
+        }
+
+        state = &state0;
+
+        initialized = 1;
+
+        rand_seed(1);
     }
-
-    state = &state0;
-
-    initialized = 1;
-
-    rand_seed(1);
-  }
 }
 
 
@@ -510,7 +524,6 @@ static int this_drand48_iterate (unsigned short int xsubi[3],
 //jonti
 
 static long int this_nrand48(unsigned short int *xsubi)
-    // unsigned short int xsubi[3];
 {
   long int result;
 
@@ -520,9 +533,6 @@ static long int this_nrand48(unsigned short int *xsubi)
 }
 
 static int this_nrand48_r (unsigned short int *xsubi, struct this_drand48_data *buffer, long int *result)
-     //unsigned short int xsubi[3];
-     //struct this_drand48_data *buffer;
-     //long int *result;
 {
   /* Compute next state.  */
   if (this_drand48_iterate (xsubi, buffer) < 0)
@@ -538,8 +548,6 @@ static int this_nrand48_r (unsigned short int *xsubi, struct this_drand48_data *
 }
 
 static int this_drand48_iterate (unsigned short int *xsubi, struct this_drand48_data *buffer)
-     //unsigned short int xsubi[3];
-     //struct this_drand48_data *buffer;
 {
   uint64_t X;
   uint64_t result;

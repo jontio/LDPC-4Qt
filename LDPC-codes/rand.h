@@ -16,6 +16,8 @@
 #ifndef RAND_H
 #define RAND_H
 
+int setRandFileName(char *filename);
+
 /* STATE OF RANDOM NUMBER GENERATOR. */
 
 #define N_tables 5		/* Number of tables of real random numbers */

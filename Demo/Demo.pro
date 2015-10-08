@@ -15,9 +15,6 @@ TEMPLATE = app
 
 #DEFINES += QT_NO_DEBUG_OUTPUT
 
-#RAND_FILE is a file for rand.c
-DEFINES += RAND_FILE=\\\"randfile\\\"
-
 SOURCES += main.cpp\
         mainwindow.cpp \
     ../LDPC-4Qt/ldpc4qt.cpp
@@ -33,4 +30,5 @@ DISTFILES += \
     ../LDPC-codes/COPYRIGHT \
     ../LDPC-codes/LGPL \
     ../LDPC-codes/License.txt \
-    ../LDPC-codes/README.md
+    ../LDPC-codes/README.md \
+    README.md

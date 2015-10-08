@@ -5,7 +5,8 @@ The name of this file I've changed from README to README.md. I've placed
 header gards around all the header files. Also I have cast to the type of
 variables returned by chk_alloc as it would give me an error otherwise.
 In rand.c I changed two declarations to work with C++ toward the end of
-the file.
+the file and also removed the RAND_FILE definition for a char* with a
+setRandFileName function in rand.c.
 
 These files do the main work behind the Qt C++ wrapper.
 

@@ -1,17 +1,25 @@
 #include "ldpccode.h"
 
+bool LDPCCode::setRandFileName(QString filename)
+{
+    if(::setRandFileName(filename.toLocal8Bit().data())==1)return true;
+    return false;
+}
+
 LDPCCode::LDPCCode()
 {
-    //
+    setRandFileName((QString)(QApplication::applicationDirPath()+"/randfile"));
 }
 
 LDPCCode::LDPCCode(QString filename)
 {
+    setRandFileName((QString)(QApplication::applicationDirPath()+"/randfile"));
     loadfromfile(filename);
 }
 
 LDPCCode::LDPCCode(int M, int N, int seed, LDPCMakeLDPC::make_method parity_check_make_method, QString distrib, int no4cycle, LDPCMakeGen::make_method generator_make_method, mod2sparse_strategy strategy, int abandon_number, int abandon_when)
 {
+    setRandFileName((QString)(QApplication::applicationDirPath()+"/randfile"));
     create(M, N, seed, parity_check_make_method, distrib, no4cycle, generator_make_method, strategy, abandon_number, abandon_when);
 }
 
