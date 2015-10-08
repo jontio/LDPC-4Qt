@@ -31,4 +31,6 @@ DISTFILES += \
     ../LDPC-codes/LGPL \
     ../LDPC-codes/License.txt \
     ../LDPC-codes/README.md \
-    README.md
+    README.md \
+    screenshot.png \
+    LDPC1000x2000SimulationResult.png
