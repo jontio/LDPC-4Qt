@@ -1,0 +1,27 @@
+#include "ldpc4qt.h"
+
+#include "../LDPC-codes/alloc.c"
+#include "../LDPC-codes/rand.c"
+#include "../LDPC-codes/rcode.c"
+#include "../LDPC-codes/channel.c"
+#include "../LDPC-codes/dec.c"
+#include "../LDPC-codes/enc.c"
+#include "../LDPC-codes/blockio.c"
+#include "../LDPC-codes/intio.c"
+#include "../LDPC-codes/check.c"
+#include "../LDPC-codes/open.c"
+#include "../LDPC-codes/mod2convert.c"
+#include "../LDPC-codes/mod2dense.c"
+#include "../LDPC-codes/mod2sparse.c"
+#include "../LDPC-codes/distrib.c"
+
+
+#include "ldpcencode.cpp"
+#include "ldpcdecode.cpp"
+#include "ldpcverify.cpp"
+#include "ldpcmakeldpc.cpp"
+#include "ldpcmakegen.cpp"
+#include "ldpctransmitsimulation.cpp"
+#include "ldpcqconversions.cpp"
+#include "ldpccode.cpp"
+

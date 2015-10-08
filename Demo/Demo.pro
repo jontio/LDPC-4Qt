@@ -26,3 +26,11 @@ HEADERS  += mainwindow.h \
     ../LDPC-4Qt/ldpc4qt.h
 
 FORMS    += mainwindow.ui
+
+DISTFILES += \
+    LICENSE \
+    ../LDPC-4Qt/LICENSE \
+    ../LDPC-codes/COPYRIGHT \
+    ../LDPC-codes/LGPL \
+    ../LDPC-codes/License.txt \
+    ../LDPC-codes/README.md
