@@ -1,8 +1,8 @@
 # LDPC-4Qt
 LDPC (Low Density Parity Check) FEC (Forward error correction) for use with Qt C++ projects. This is a Qt C++ wrapper for the C implementation of [radfordneal/LDPC-codes](https://github.com/radfordneal/LDPC-codes)
 
-#Not uploaded yet
-Please be patient I am currently gathering all the files together need for GitHub and working on a Demo application. It will be uploaded very soon. 
+#Uploaded but...
+The main files have been uploaded but there is still a little tidying to do and documentaion to write. It should be finished in a few days. 
 
 ##Example usage
 
