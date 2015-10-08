@@ -73,4 +73,11 @@ In your project you have to include `ldpc4qt.h` and compile and link with `ldpc4
 
 It is not necessary to compile anything in [LDPC-codes](LDPC-codes); compiling `ldpc4qt.cpp` takes care of the rest.
 
+##Directory structure
+
+[Demo](Demo) contains a GUI qmake project for demonstrating how to use LDPC-4Qt. This project can be opened using Qt creator.
+
+[LDPC-4Qt](LDPC-4Qt) contains the wraper to the LDPC-codes. It is these files that your Qt project should directly interact with.
+
+[LDPC-codes](LDPC-codes) contains the underlying code that does the main work. This is a fork of the [radfordneal/LDPC-codes](https://github.com/radfordneal/LDPC-codes) repository.
 
