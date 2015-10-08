@@ -14,7 +14,7 @@ void MainWindow::on_pushTest_clicked()
 {
 
     ui->plainTextEdit->clear();
-    message("this test does the basic stuff of code reneration uses and validation.");
+    message("this test does the basic stuff of code generation, use, and validation.");
 
     //------------------
     //  start the test
