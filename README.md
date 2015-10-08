@@ -1,8 +1,19 @@
 # LDPC-4Qt
-LDPC (Low Density Parity Check) FEC (Forward error correction) for use with Qt C++ projects. This is a Qt C++ wrapper for the C implementation of [radfordneal/LDPC-codes](https://github.com/radfordneal/LDPC-codes)
+A simple interface for forward error correction using LDPC codes.
 
-#Uploaded but...
-The main files have been uploaded but there is still a little tidying to do and documentaion to write. It should be finished in a few days. 
+LDPC-4Qt is a Qt C++ wrapper for the C implementation of [radfordneal/LDPC-codes](https://github.com/radfordneal/LDPC-codes) and allows a simple interface to LDPC codes using Qt C++. 
+
+LDPC-4Qt can be used to easily encode and decode data without the need to fully understand LDPC codes. This makes it ideal for experimenting with LDPC codes and see if they are right for you.
+
+#LDPC performance
+
+LDPC (*Low Density Parity Check*) code are extremely good FEC (*Forward error correction*) codes. LDPC codes along with Turbo codes are arguably currently the most exciting FEC codes. They get the name "capacity approaching codes" meaning they get very close to the capacity limit that a channel can cope with.
+
+The following figure shows the performance of a randomly generated 1000x2000 LDPC code in the presence of Additive White Gaussian Noise (*AWGN*).  This was obtained with the [Demo application](Demo) and plotted in Matlab.
+
+![LDPC BER versus EbNo plot](Demo/LDPC1000x2000SimulationResult.png)
+
+What this plot is saying in a way, is, if you are transmitting data from A to B in the presence of AWGN (hissing sounding noise) then with this 1000x2000 LDPC code you can probably get away with using a quarter of the amount of power you would have to use otherwise without it. That's pretty amazing performance.
 
 ##Example usage
 
@@ -55,4 +66,11 @@ The main files have been uploaded but there is still a little tidying to do and 
     //have a look at the BER (Bit Error Rate)
     qDebug()<<"BER ="<<verify.getber();
 ```
+
+##Compiling
+
+In your project you have to include `ldpc4qt.h` and compile and link with `ldpc4qt.cpp`. [randfile](LDPC-codes/randfile) should also be copied to the directory where the final application resides.
+
+It is not necessary to compile anything in [LDPC-codes](LDPC-codes); compiling `ldpc4qt.cpp` takes care of the rest.
+
 
