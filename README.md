@@ -48,5 +48,8 @@ LDPC (Low Density Parity Check) FEC (Forward error correction) for use with Qt C
 
     //perfom the comparison
     verify.verify(src,dec);
+    
+    //have a look at the BER (Bit Error Rate)
+    qDebug()<<"BER ="<<verify.getber();
 ```
 
