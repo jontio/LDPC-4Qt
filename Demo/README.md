@@ -23,5 +23,3 @@ To compile this demonstration application it is suggested that Qt creator is use
 4. Copy [randfile](../LDPC-codes/randfile) to the same directory that that the executable that Qt creator built in step 3 resides.
 5. Click Run in Qt creator
 
-...
-
