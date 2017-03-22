@@ -1,11 +1,13 @@
 # LDPC-4Qt
 A simple interface for forward error correction using LDPC codes.
 
+However this it is way too slow to be useful so I wouldn't waste to much time on this repository.
+
 LDPC-4Qt is a Qt C++ wrapper for the C implementation of [radfordneal/LDPC-codes](https://github.com/radfordneal/LDPC-codes) and allows a simple interface to LDPC codes using Qt C++. 
 
 LDPC-4Qt can be used to easily encode and decode data without the need to fully understand LDPC codes. This makes it ideal for experimenting with LDPC codes and see if they are right for you.
 
-#LDPC performance
+# LDPC performance
 
 LDPC (*Low Density Parity Check*) code are extremely good FEC (*Forward error correction*) codes. LDPC codes along with Turbo codes are arguably currently the most exciting FEC codes. They get the name "capacity approaching codes" meaning they get very close to the capacity limit that a channel can cope with.
 
@@ -15,7 +17,7 @@ The following figure shows the performance of a randomly generated 1000x2000 LDP
 
 What this plot is saying in a way, is, if you are transmitting data from A to B in the presence of AWGN (hissing sounding noise) then with this 1000x2000 LDPC code you can probably get away with using a quarter of the amount of power you would have to use otherwise without it. That's pretty amazing performance.
 
-##Example usage
+## Example usage
 
 ```C++
     //create an ldpc code via random methods
